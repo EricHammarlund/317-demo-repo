@@ -38,9 +38,37 @@ const getCat = (id) => {
 };
 
 const createCat = (data) => {
+    const newCat = {
+        id: nextId(),
+        ...data // spread operator injects fields of a passed object into new object
+        /* could also write as:
+        name: data.name;
+        color: data.color;
+        human: data.human;
+        image: data.image;
+        */
+    }
+    cats.push(newCat);
+    return newCat;
 };
 
 const updateCat = (id, data) => {
+    let catToUpdate = cats.find(cat => cat.id === id);
+
+    cats = cats.map(cat => {
+        if (cat.id !== id) {
+            return cat;
+        }
+
+        let updatedCat = {
+            ...catToUpdate,
+            ...data // overwrites the field of interest
+        }
+        return updatedCat;
+    })
+
+    let updatedCat = cats.find(cat => cat.id === id);
+    return updatedCat;
 };
 
 const deleteCat = (id) => {

@@ -26,7 +26,9 @@
         <img src="<%= cat.photo %>"/>
 
         <div> Toys:
-
+            <% for (let toy of toys) { %>
+                <div><%= toy.name %> </div>
+            <% } %>
         </div>
     </article>
 

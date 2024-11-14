@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import {cats} from './data/cats.js';
+import { getCats, getCatById, deleteCatById } from './data/cats.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -20,7 +20,24 @@ app.get('/', (req, res) => {
 
 
 app.get('/cats', (req, res) => {
-   res.render('cats_list', {cats});
+    const cats = getCats();
+    res.render('cats_list', {cats});
+});
+
+app.get('/cats/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const cat = getCatById(id);
+    res.render('cat_detail', {'cat': cat})
+})
+
+app.delete('/cats/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    try {
+        deleteCatById(id);
+        res.status(200).json({"message": `deleted cat ${id}`})
+    } catch (error) {
+        res.status(500).json({"message": error});
+    }
 });
 
 app.listen(PORT, () => {

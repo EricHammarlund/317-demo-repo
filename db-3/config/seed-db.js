@@ -26,7 +26,9 @@ const createTables = async () => {
             );
             CREATE TABLE IF NOT EXISTS toys (
                 id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-
+                name TEXT NOT NULL,
+                cat_id INT NOT NULL,
+                FOREIGN KEY (cat_id) REFERENCES cats(id) ON DELETE CASCADE
                 
             );
         `;
