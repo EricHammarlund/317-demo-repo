@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Famous Cats</title>
+    <link rel="icon" type="image/png" href="/images/cat.png">
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/scripts/logout.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Famous Cats</h1>
+    </header>
+    <nav class="navbar">
+        <a href="/cats">List</a>
+    </nav>
+
+    <div class="container">
+
+    <article class="cat-details">
+        <div>Name: <%= cat.name %></div>
+        <div>Color: <%= cat.color %></div>
+        <div>Human: <%= cat.human %></div>
+        <img src="<%= cat.photo %>"/>
+
+        <div> Toys:
+            <% for (let toy of toys) { %>
+                <div> <%= toy.name %> </div>
+            <% } %>
+        </div>
+    </article>
+
+    </div>
+    <footer>
+        <span id="contact">© Famous Cats Inc 2024</span>
+    </footer>    
+</body>
+
+</html>

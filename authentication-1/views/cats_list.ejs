@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Famous Cats</title>
+    <link rel="icon" type="image/png" href="/images/cat.png">
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/scripts/addCat.js"></script>
+    <script defer src="/scripts/deleteCat.js"></script>
+    <script defer src="/scripts/logout.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Famous Cats</h1>
+    </header>
+    <nav class="navbar">
+        <a href="/">Home</a>
+    </nav>
+
+    <div class="container">
+
+    <% for (let i = 0; i < cats.length; i++) { %>
+        <article class="cat-listing">
+            <div>Name: 
+                <a href="/cats/<%= cats[i].id %>">
+                    <%= cats[i].name %>
+                </a>
+            </div>
+            <button id="delete-<%= cats[i].id  %>">Delete</button>
+        </article>
+    <% } %>
+    </div>
+
+    <form class="add-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
+        <br><br>
+        
+        <label for="human">Human:</label>
+        <input type="text" id="human" name="human" required>
+        <br><br>
+        
+        <label for="image-url">Image URL:</label>
+        <input type="text" id="image-url" name="image-url" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <footer>
+        <span id="contact">© Famous Cats Inc 2024</span>
+    </footer>    
+</body>
+
+</html>

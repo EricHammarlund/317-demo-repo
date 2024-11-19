@@ -1,0 +1,112 @@
+header {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #d7f0f2;
+    h1 {
+        line-height: 300px;
+        text-align: center;
+        color: #4b4755;
+        font-size: 50pt;
+        margin: 0px;
+        white-space: nowrap;
+    }
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #f0929d;
+    padding: 10px 0px 10px 0px;
+    a { 
+        color: #4b4755;
+    }
+}
+
+body  {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d7f0f2;
+    margin: 0px;
+}
+
+footer {
+    height:30px;
+    color: #4b4755;
+    background-color: #f0929d;
+    text-align:right;
+}
+.home-container{
+    width: 800px;
+    margin: 0 auto;
+    
+}
+.container{
+    padding: 10px 0;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;   
+}
+
+.section-text {
+    text-align: left;
+    width: 800px;
+    padding-bottom: 20px;
+}
+
+
+.profile-container {
+    display: grid;
+    width: 800px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 20px;
+    margin: 10px auto;
+}
+
+.profile-img {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+}
+    
+.profile-txt {
+    grid-row: 3;
+    grid-column: 1 / 4;
+}
+
+.profile-side-gallery {
+    grid-row: 1 / 3;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.side-img{
+    height: 130px;
+    width: 100px;
+}
+.cat-listing {
+    margin: 20px 0px;
+    img {
+        width: 200px; 
+    }
+}
+
+.cat-details {
+    margin: 20px 0px;
+    img {
+        width: 200px; 
+    }
+}
+
+.add-form{
+    text-align: center;
+}
+#loginForm {
+    text-align: right;
+    padding-right: 100px;
+}
