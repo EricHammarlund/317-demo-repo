@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "nodemon server.js",
-    "seed-db": "node config/seed-db.js"
+    "seed-db": "node config/seed-db.js",
+    "gen-secret-key": "node gen-secret-key.js"
   },
   "keywords": [],
   "author": "",
